@@ -7,7 +7,7 @@ import Antonyms from "../components/Antonyms";
 export default function Home() {
   const [synonymsVisible, setSynonymsVisible] = useState(false);
   const [rhymesVisible, setRhymesVisible] = useState(false);
-  const [AntonymsVisible, setAntonymsVisible] = useState(false);
+  const [antonymsVisible, setAntonymsVisible] = useState(false);
 
   const [synonymsData, setSynonymsData] = useState(null);
   const [rhymesData, setRhymesData] = useState(null);
@@ -150,9 +150,9 @@ export default function Home() {
             <div className="w-1/5 items-center justify-center flex sm:w-1/3 sm:text-2xl">
               <button
                 type="button"
-                onClick={() => setAntonymsVisible(!AntonymsVisible)}
+                onClick={() => setAntonymsVisible(!antonymsVisible)}
                 className={`word-type ${
-                  AntonymsVisible ? "word-type-visible" : "word-type-hidden"
+                  antonymsVisible ? "word-type-visible" : "word-type-hidden"
                 } sm:border-none`}
               >
                 Antonyms
@@ -192,7 +192,7 @@ export default function Home() {
           </div>
           <div
             className={`word-list ${
-              AntonymsVisible ? "word-list-visible" : "word-list-hidden"
+              antonymsVisible ? "word-list-visible" : "word-list-hidden"
             } sm:w-1/3`}
           >
             {antonymsData.map((antonym, i) => {
