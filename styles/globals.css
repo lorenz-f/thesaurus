@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Common word list styles */
+.word-list {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  transition: all 0.3s ease;
+}
+
+.word-list-visible {
+  opacity: 100;
+}
+
+.word-list-hidden {
+  opacity: 0;
+}
+
+/* Common word type styles */
+.word-type {
+  border-bottom-width: 1px;
+  height: 3.5rem;
+  transition: all 0.3s ease;
+}
+
+.word-type-visible {
+  border-color: #D1D5DB;
+  color: #D1D5DB;
+}
+
+.word-type-visible:hover {
+  color: #F3F4F6;
+  border-color: #F3F4F6;
+}
+
+.word-type-hidden {
+  border-color: #374151;
+  color: #6B7280;
+}
+
+.word-type-hidden:hover {
+  color: #9CA3AF;
+  border-color: #9CA3AF;
+}
+
+/* removes default browser on-focus CSS stylings */
+
+*:focus-visible {
+  outline: thin dotted 1px;
+  outline-color: #E6E3D3;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    transition-property: all;
+  }
+
+/* track */
+::-webkit-scrollbar-track {
+  background: var(--lightestgrey); 
+}
+
+/* scrollbar */
+::-webkit-scrollbar-thumb {
+  background: #6B7280; 
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #D1D5DB;
+}
+
+/* styles the border-like elements under each "option" (synonyms, antonyms, rhymes) */
+.option-subheader {
+  background-image: linear-gradient(to right, transparent 35%, #E5E7EB 43%, #E5E7EB 57%, transparent 65%);
+}
+
+/* "awaiting icon" idle phrase on home screen that fades in and out prior to initial user query */
+.loader {
+    animation: color-change 5s infinite;
+  }
+ 
+@keyframes color-change {
+  0% { color: #6B7280; }
+  50% { color: #1F2937; }
+  100% { color: #6B7280; }
+}
